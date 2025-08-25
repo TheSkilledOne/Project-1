@@ -1,0 +1,106 @@
+body {
+  background-color: #aadbb3;
+  text-align: center;
+  height: 100vh;
+  margin: 0px;
+  overflow-x: hidden;
+}
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.para {
+  text-decoration: underline;
+  font-style: unset;
+  font-weight: 400;
+  font-size: 32px;
+}
+
+/* Header section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #333;
+  padding: 10px;
+}
+
+.logo img {
+  width: 75px;
+  height: 75px;
+}
+
+.topnav {
+  background-color: #333;
+  display: flex;
+  padding: 14px;
+  overflow: hidden;
+}
+
+.topnav li a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav li a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav li a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+/* Section Showcase and Cards*/
+.card-container {
+  width: 100%;
+  display: flex;
+}
+.card {
+  width: 350px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px #013220;
+}
+
+.card img {
+  width: 100%;
+  height: 331px;
+}
+.card-txt {
+  text-wrap: wrap;
+  padding: 7px;
+}
+/* Utility */
+
+#img1 {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 25px;
+  box-shadow: 10px 10px 10px #013220;
+}
+
+#hideBtn {
+  width: 100%;
+  margin: 10px;
+  background-color: skyblue;
+  padding: 10px;
+  border-radius: 25px;
+  font-size: 100%;
+}
+
+#hideBtn:hover {
+  background-color: lightblue;
+}
