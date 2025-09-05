@@ -11,8 +11,8 @@
       <nav>
         <ul class="topnav">
           <li><a href="index.html">My Webpage</a></li>
-          <li><a href="page2.html">About Me</a></li>
-          <li><a class="active" href="page3.html">Contact Info</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a class="active" href="contact.html">Contact Info</a></li>
         </ul>
       </nav>
     </div>
@@ -20,30 +20,43 @@
       <div>
         <h1 class="fsh">Webpage One</h1>
       </div>
-      <form class="form-one" action="action_page.php" method="POST">
-        <div class="msg">
-            <div>
-                <label for="one">First Input:</label>
-                <br>
-                <input type="text" id="one" name="one" placeholder="Here">
+      <div class="form-wrapper">
+      <form> <!--action="action_page.php" method="POST"-->
+       
+            <div class="msg">
+              
+              <div class="fname">
+                  <label for="first">First Name:</label>
+                <input type="text" id="first" name="first" placeholder="John">
+              </div>
+          
+               <div class="fname">
+                 <label for="last">Last Name:</label>
+                
+                <input type="text" id="last" name="last" placeholder="Smith">
+               </div>
+          
             </div>
-            <div>
-                <label for="two">Second Input:</label>
-                <br>
-                <input type="text" id="two" name="two" placeholder="Here">
+            
+            <div class="email">
+              
+              <label for="email">Email:</label>
+              <input type="text" id="email" name="email" placeholder="example@gmail.com">
             </div>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input class="email" type="text" id="email" name="email" placeholder="example@gmail.com">
-        </div>
-        <div>
-            <input type="reset">
-        </div>
-        <div>
-            <input type="submit">
-        </div>
+      
+       <div class="descript">
+       
+            <label for="descript">Description:</label>
+            <textarea id="descript" name="descript" rows="4" cols="50"></textarea>
+      </div>
+     
+           <div class="controls">
+             <button type="reset">Clear</button>
+            <button type="submit"> Submit </button>
+           </div>
+      
       </form>
+      </div>
     </main>
     <footer>
       <div class="logo2">
