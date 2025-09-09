@@ -10,9 +10,6 @@ main {
   max-width: 1024px;
   margin: 0 auto;
 }
-.test-param {
-  display: flex;
-}
 .para {
   text-decoration: underline;
   font-style: unset;
@@ -282,3 +279,19 @@ footer {
 #hideBtn:hover {
   background-color: lightblue;
 }
+#test-param {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #333;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+/* REMVE TEST-PARAM IF - 
+    The content of the page
+    becomes large enough to warrent a scroll bar.
+    temorary dev fix. */
