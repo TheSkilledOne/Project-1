@@ -1,3 +1,10 @@
+/* Mobile Styles */
+@media (min-width: 1024x) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
 body {
   background-color: #aadbb3;
   text-align: center;
@@ -266,6 +273,8 @@ footer {
   gap: 10px;
   width: 1024px;
   height: 1024px;
+  padding-bottom: 50px;
+  padding-top: 10px;
 }
 
 .grid-item {
@@ -275,6 +284,35 @@ footer {
   align-items: center;
   font-size: 1.5em;
   border: 1px solid darkgray;
+  overflow: hidden;
+  box-shadow: 3px 3px 10px #013220;
+  border: none;
+}
+#item1 img {
+  width: 100%;
+  height: auto;
+}
+#item5 img {
+  width: 100%;
+  max-height: 380px;
+  height: auto;
+}
+#item3 img {
+  width: auto;
+  height: 100%;
+}
+#item2 img {
+  width: auto;
+  height: 100%;
+}
+#item4 {
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid black;
+  text-align: left;
+}
+#item4 p {
+  padding: 15px;
 }
 #item1 {
   grid-column: 1/3;
@@ -287,6 +325,7 @@ footer {
   grid-column: 1;
   grid-row: 2;
   grid-row: 2/4;
+  display: block;
 }
 #item5 {
   grid-column: 2/4;
@@ -321,11 +360,9 @@ footer {
   text-align: center;
   background-color: #333;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  margin-top: 150px;
 }
-/* REMVE TEST-PARAM IF - 
+/* REMOVE TEST-PARAM IF - 
     The content of the page
     becomes large enough to warrent a scroll bar.
     temorary dev fix. */
