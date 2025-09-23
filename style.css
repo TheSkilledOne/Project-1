@@ -31,16 +31,20 @@ main {
 .logo img {
   width: 75px;
   height: 75px;
+  display: block;
 }
 
 nav {
   margin-right: 30px;
+  display: flex;
+  align-items: center;
 }
 .topnav {
   background-color: #333;
   display: flex;
   padding: 14px;
   overflow: hidden;
+  flex-direction: row;
 }
 
 .topnav li a {
@@ -64,7 +68,13 @@ nav {
 li {
   list-style: none;
 }
-
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  display: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
 /* Section Showcase and Cards*/
 .card-container {
   width: 100%;
@@ -269,7 +279,7 @@ footer {
   max-width: 1024px;
   height: auto;
   min-height: 800px;
-  max-height: 1024px;
+  /* max-height: 1024px; */
   padding-bottom: 50px;
   padding-top: 10px;
   margin: 0 auto;
@@ -312,7 +322,6 @@ footer {
   grid-column: 1;
   grid-row: 2;
   grid-row: 2/4;
-  display: block;
 }
 #item5 {
   grid-column: 2/4;
@@ -340,6 +349,9 @@ footer {
   background-color: lightblue;
 }
 @media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, auto);
@@ -351,8 +363,8 @@ footer {
     min-height: auto;
   }
   .grid-item {
-    grid-column: 1;
-    grid-row: auto;
+    grid-column: auto !important;
+    grid-row: auto !important;
     min-height: 250px;
   }
   .grid-item img {
@@ -360,6 +372,14 @@ footer {
     height: 100%;
     object-fit: cover;
     object-position: center top;
+  }
+  #item1,
+  #item2,
+  #item3,
+  #item4,
+  #item5 {
+    grid-column: auto !important;
+    grid-row: auto !important;
   }
 }
 /* REMOVE TEST-PARAM IF - 
