@@ -8,6 +8,9 @@
       <div class="logo">
         <img src="/assets/logo.png" />
       </div>
+      <div class="hamburger">
+          <img src="assets/burger-bar (1).svg" alt="Burger Menu"  class="menuIcon" id="burgerToggle"/>
+      </div>
       <nav>
         <ul class="topnav">
           <li><a class="active" href="index.html">My Webpage</a></li>
@@ -15,8 +18,15 @@
           <li><a href="contact.html">Contact Info</a></li>
           <li><a href="gallery.html">Gallery</a></li>
         </ul>
-        <img src="assets/burger-bar (1).svg" alt="Menu" class="menu-icon">
       </nav>
+      <div class="burger-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
     </div>
     <main>
       <div>
@@ -89,6 +99,16 @@
         <input type="button" value="Hide" id="hideBtn" onclick="hide()" />
       </div> -->
     </main>
+    <script>
+      // Toggle burger menu visibility
+      document.addEventListener('DOMContentLoaded', function() {
+        var burger = document.getElementById('burgerToggle');
+        var menu = document.querySelector('.burger-menu');
+        burger.addEventListener('click', function() {
+          menu.classList.toggle('active');
+        });
+      });
+    </script>
     <footer>
       <div class="logo2">
         <a href="index.html"><img src="/assets/logo.png" />
@@ -129,6 +149,6 @@
         </ul>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js" src="navigation.js"></script>
   </body>
 </html>
