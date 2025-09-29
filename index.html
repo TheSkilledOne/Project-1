@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<meta charset="UTF-8" />
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Webpage</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <div class="header">
       <div class="logo">
-        <img src="/assets/logo.png" />
+        <img src="/assets/logo.png" alt="Website Logo" />
       </div>
       <div class="hamburger">
-          <img src="assets/burger-bar (1).svg" alt="Burger Menu"  class="menuIcon" id="burgerToggle"/>
+        <img
+          src="assets/burger-bar (1).svg"
+          alt="Burger Menu"
+          class="menuIcon"
+          id="burgerToggle"
+        />
       </div>
       <nav>
         <ul class="topnav">
@@ -21,21 +29,19 @@
       </nav>
       <div class="burger-menu">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="gallery.html">Gallery</a></li>
         </ul>
       </div>
     </div>
+
     <main>
       <div>
         <h1 class="fsh">Webpage One</h1>
-        <p class="para">This is a button, but *shhhhhh!* its a secret!</p>
+        <p class="para">This is a button, but *shhhhhh!* it's a secret!</p>
       </div>
-
-      <!-- <input type="text" value="" id="input box">
-            <button type="button" id="button1" onclick="buttonPush()">This could do something...</button> -->
 
       <div class="imgOne">
         <img
@@ -44,7 +50,9 @@
           id="img1"
         />
       </div>
+
       <h1 style="padding: 10px">This Could be Interesting</h1>
+
       <div class="card-container">
         <div class="card">
           <div class="card-img">
@@ -60,23 +68,25 @@
               writing has many different styles, and uses many different
               spealized pens.
             </p>
-            <input type="button" value="Learn More" onclick="" />
+            <input type="button" value="Learn More" />
           </div>
         </div>
+
         <div class="card">
           <div class="card-img">
             <img alt="Here is a image of a forge" src="/assets/forge.jpg" />
           </div>
           <div class="card-txt">
             <h4>Meatalwork, Forging</h4>
-            <p css>
+            <p>
               Forging is the art of shaping metal by heating it in a specilized
               furnace called a forge, and then beating it into shape with
               varrious techniques.
             </p>
-            <input type="button" value="Learn More" onclick="" />
+            <input type="button" value="Learn More" />
           </div>
         </div>
+
         <div class="card">
           <div class="card-img">
             <img
@@ -91,64 +101,56 @@
               is their mission to reclaim the Elden ring, and become the Elden
               Lord.
             </p>
-            <input type="button" value="Learn More" onclick="" />
+            <input type="button" value="Learn More" />
           </div>
         </div>
       </div>
-      <!--<div>
-        <input type="button" value="Hide" id="hideBtn" onclick="hide()" />
-      </div> -->
     </main>
-    <script>
-      // Toggle burger menu visibility
-      document.addEventListener('DOMContentLoaded', function() {
-        var burger = document.getElementById('burgerToggle');
-        var menu = document.querySelector('.burger-menu');
-        burger.addEventListener('click', function() {
-          menu.classList.toggle('active');
-        });
-      });
-    </script>
+
     <footer>
       <div class="logo2">
-        <a href="index.html"><img src="/assets/logo.png" />
-        <h1>Webpage One</h1></a>
+        <a href="index.html">
+          <div>
+            <a href="index.html"
+              ><img src="/assets/logo.png" />
+              <h1>Webpage One</h1></a
+            >
+          </div>
+        </a>
       </div>
       <div>
         <ul class="social">
           <li class="socialItems">
-            <img src="/assets/youtube.png" />
+            <img src="/assets/youtube.png" alt="" />
             <a
               href="https://www.youtube.com/"
               title="This will take you to Youtube."
               target="_blank"
+              >Youtube</a
             >
-              Youtube
-            </a>
           </li>
           <li class="socialItems">
-            <img src="/assets/twitter.png" />
+            <img src="/assets/twitter.png" alt="" />
             <a
               href="https://x.com/"
               title="This will take you to Twitter."
               target="_blank"
+              >Twitter</a
             >
-              Twitter
-            </a>
           </li>
           <li class="socialItems">
-            <img src="/assets/instagram.png" />
+            <img src="/assets/instagram.png" alt="" />
             <a
               href="https://www.instagram.com/"
               title="This will take you to Instagram."
               target="_blank"
+              >Instagram</a
             >
-              Instagram
-            </a>
           </li>
         </ul>
       </div>
     </footer>
-    <script src="script.js" src="navigation.js"></script>
+    <script src="script.js"></script>
+    <script src="navigation.js"></script>
   </body>
 </html>
