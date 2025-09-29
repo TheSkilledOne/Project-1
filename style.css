@@ -1,16 +1,30 @@
-/* Mobile Styles */
+/* GLOBAL LAYOUT */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-color: #aadbb3;
   text-align: center;
   max-width: 100%;
-  height: 100vh;
-  margin: 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
 }
+
 main {
+  flex: 1;
   max-width: 1024px;
   margin: 0 auto;
 }
+
 .para {
   text-decoration: underline;
   font-style: unset;
@@ -18,12 +32,12 @@ main {
   font-size: 32px;
 }
 
-/* Header section */
+/* HEADER */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  max-width: 100%;
   background-color: #333;
   padding: 10px;
 }
@@ -35,10 +49,10 @@ main {
 }
 
 nav {
-  margin-right: 30px;
   display: flex;
   align-items: center;
 }
+
 .topnav {
   background-color: #333;
   display: flex;
@@ -49,7 +63,6 @@ nav {
 
 .topnav li a {
   color: #f2f2f2;
-  text-align: center;
   padding: 15px;
   text-decoration: none;
   font-size: 17px;
@@ -68,25 +81,80 @@ nav {
 li {
   list-style: none;
 }
-.hamburger img {
-  display: none;
-}
 
+/* HAMBURGER MENU */
 .menuIcon {
   width: 40px;
   height: 40px;
   display: none;
-  margin-left: 10px;
   cursor: pointer;
 }
+
 .burger-menu {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #333;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+  width: 100%;
+  transform: translateY(-20px);
+  z-index: 10; /* above other content */
 }
-/* Section Showcase and Cards*/
+
+.burger-menu.active {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.burger-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.burger-menu ul li {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.burger-menu ul li a {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.burger-menu ul li a:hover {
+  background-color: #04aa6d;
+  color: white;
+  border-radius: 5px;
+}
+
+.burger-menu ul li a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+/* CARDS */
 .card-container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 .card {
   width: 350px;
   margin: 10px;
@@ -101,33 +169,36 @@ li {
   width: 100%;
   height: 331px;
 }
+
 .card-txt {
-  text-wrap: wrap;
+  overflow-wrap: break-word;
   padding: 7px;
 }
+
 .card-txt input {
   background-color: #04aa6d;
   color: white;
   border: none;
-  padding: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 10px 15px;
   border-radius: 25px;
   margin-bottom: 15px;
   box-shadow: 3px 3px 10px #013220;
+  cursor: pointer;
 }
+
 .card-txt input:hover {
   background-color: white;
   color: black;
 }
 
-/*about*/
+/* ABOUT */
 .bio-container {
   width: 100%;
   display: flex;
   padding: 15px;
   margin-bottom: 20px;
 }
+
 .bio-img img {
   max-width: 50%;
   width: 100%;
@@ -136,11 +207,13 @@ li {
   border: 1px solid grey;
   overflow: hidden;
 }
+
 .bio-img {
   width: 100%;
   height: auto;
   padding: 15px;
 }
+
 .bio {
   width: 100%;
   height: auto;
@@ -149,7 +222,7 @@ li {
   border: 1px solid black;
 }
 
-/*Contact us*/
+/* CONTACT */
 .form-wrapper {
   margin: auto;
   max-width: 450px;
@@ -159,7 +232,6 @@ form {
   padding: 15px;
   display: flex;
   flex-direction: column;
-
   width: 100%;
   background-color: white;
   border: 1px solid grey;
@@ -179,31 +251,22 @@ input {
   margin-bottom: 10px;
 }
 
-.fname {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-top: 15px;
-}
-.email {
-  width: 100%;
-  display: flex;
-  text-align: left;
-  flex-direction: column;
-  margin-top: 15px;
-}
+.fname,
+.email,
 .descript {
+  width: 100%;
   display: flex;
-  text-align: left;
   flex-direction: column;
+  text-align: left;
   margin-top: 15px;
 }
+
 .controls {
   margin-top: 20px;
   padding: 15px;
   margin-bottom: 20px;
 }
+
 .controls button {
   min-width: 80px;
   background-color: #04aa6d;
@@ -212,12 +275,15 @@ input {
   border-radius: 25px;
   box-shadow: 1px 1px 1px #013220;
   padding: 10px;
+  cursor: pointer;
 }
+
 .controls button:hover {
   background-color: lightgray;
   color: black;
 }
-/* Footer */
+
+/* FOOTER */
 footer {
   width: 100%;
   display: flex;
@@ -225,58 +291,62 @@ footer {
   justify-content: center;
   text-align: center;
   background-color: #333;
-  padding: 10px;
+  padding: 50px 0;
 }
 
-.social {
-  display: flex;
-  padding: 14px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  max-width: 100%;
-  margin-left: 50px;
-}
-.socialItems {
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-.socialItems a {
-  padding: 15px;
-  text-decoration: none;
-  font-size: 17px;
-  display: flex;
-  color: white;
-}
-.socialItems a:hover {
-  color: #04aa6d;
-}
-
-.socialItems img {
-  width: 50px;
-  height: 50px;
-  margin: 15px;
-}
 .logo2 {
   margin-right: 50px;
 }
+
 .logo2 a {
   display: flex;
   color: white;
   margin: 10px;
   text-decoration: none;
 }
+
 .logo2 a img {
   width: 80px;
   height: 80px;
   margin-right: 10px;
 }
 
-/* Gallery */
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 50px;
+}
 
+.socialItems {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.socialItems img {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.socialItems a {
+  text-align: left;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+  display: flex;
+  color: white;
+}
+
+.socialItems a:hover {
+  color: #04aa6d;
+}
+
+/* GALLERY */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -284,9 +354,7 @@ footer {
   gap: 10px;
   width: 100%;
   max-width: 1024px;
-  height: auto;
   min-height: 800px;
-  /* max-height: 1024px; */
   padding-bottom: 50px;
   padding-top: 10px;
   margin: 0 auto;
@@ -299,10 +367,10 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
-
   box-shadow: 3px 3px 10px #013220;
   border: none;
 }
+
 .grid-item img {
   width: 100%;
   height: 100%;
@@ -315,9 +383,11 @@ footer {
   border: 1px solid black;
   text-align: left;
 }
+
 #item4 p {
   padding: 15px;
 }
+
 #item1 {
   grid-column: 1/3;
 }
@@ -327,14 +397,13 @@ footer {
 }
 #item3 {
   grid-column: 1;
-  grid-row: 2;
   grid-row: 2/4;
 }
 #item5 {
   grid-column: 2/4;
 }
-/* Utility */
 
+/* UTILITIES */
 #img1 {
   width: 100%;
   height: auto;
@@ -355,15 +424,35 @@ footer {
 #hideBtn:hover {
   background-color: lightblue;
 }
+
+/* RESPONSIVE (MOBILE) */
 @media (max-width: 768px) {
+  .topnav {
+    display: none; /* hide desktop nav on mobile */
+  }
+
   .menuIcon {
     display: block;
   }
+
+  .hamburger {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Desktop layout: topnav unaffected */
+  .burger-menu {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  /* Grid adjustments */
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, auto);
-    width: 100%;
-    height: auto;
     max-width: 100%;
     padding: 15px;
     gap: 20px;
@@ -374,79 +463,49 @@ footer {
     grid-row: auto !important;
     min-height: 250px;
   }
-  .grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-  #item1,
-  #item2,
-  #item3,
-  #item4,
-  #item5 {
-    grid-column: auto !important;
-    grid-row: auto !important;
-  }
 
+  /* Hide desktop topnav */
   .topnav {
     display: none;
   }
+
+  /* Change Header Layout */
   .header {
-    flex-direction: column;
-  }
-  .hamburger img {
-    display: block;
-    width: 30px;
-  }
-  .burger-menu {
-    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+  }
+
+  /* Hamburger icon */
+  .menuIcon {
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* Burger menu */
+  .burger-menu {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    border-top: 4px solid black;
+    background-color: #333;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+    width: 100%;
+    transform: translateY(-20px);
   }
-  .burger-menu.show-menu {
-    display: flex !important;
+
+  .burger-menu.active {
+    max-height: 500px; /* adjust based on # of menu items */
     opacity: 1;
     transform: translateY(0);
   }
-
-  .burger-menu li {
-    padding: 10px;
-  }
-
-  .topnav {
-    display: none;
-    flex-basis: 100%;
-    flex-wrap: wrap;
-  }
-
-  .topnav li {
-    flex-basis: 100%;
-  }
-
-  .topnav a {
-    text-align: center;
-    font: 28px;
-  }
-
-  .topnav a:hover {
-    background-color: black;
-    color: white;
-  }
-
-  .topnav {
-    padding: 30px 16px;
-    margin-left: 0;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 20px;
-  }
 }
-/* REMOVE TEST-PARAM IF - 
-    The content of the page
-    becomes large enough to warrent a scroll bar.
-    temorary dev fix. */
