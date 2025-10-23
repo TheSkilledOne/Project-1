@@ -105,12 +105,6 @@ li {
   z-index: 10; /* above other content */
 }
 
-.burger-menu.active {
-  max-height: 500px;
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .burger-menu ul {
   list-style: none;
   padding: 0;
@@ -507,5 +501,10 @@ footer {
     max-height: 500px; /* adjust based on # of menu items */
     opacity: 1;
     transform: translateY(0);
+  }
+  .burger-menu ul li:hover {
+    background-color: #04aa6d;
+    color: white;
+    border-radius: 5px;
   }
 }

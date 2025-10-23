@@ -1,25 +1,13 @@
-const inputField = document.getElementById("input1");
-const input = document.getElementById("input1");
-const button = document.getElementById("button1");
-const showcase = document.getElementById("img1");
-button.addEventListener("click", hide);
-button.addEventListener("click", buttonPush);
+const inBox = document.getElementById("txtField");
+const btnSubmit = document.getElementById("btnSubmit");
+const paraGraph = document.getElementById("outPut");
 
-function buttonPush() {
-  if (input.value === "password") {
-    alert("You found me!");
-    button.innerHTML = "This happened!";
-  } else {
-    alert("Try again!");
-    button.innerHTML = "Try again!";
-  }
-}
+btnSubmit.addEventListener("click", displayText);
 
-function hide() {
-  // alert("Test")
-  if (showcase.style.display === "none") {
-    showcase.style.display = "block";
-  } else {
-    showcase.style.display = "none";
-  }
+function displayText() {
+  var infoIn = inBox.value;
+  console.log(infoIn);
+  paraGraph.innerHTML = infoIn;
+  paraGraph.style.color = "red";
+  paraGraph.style.fontWeight = "bold";
 }
