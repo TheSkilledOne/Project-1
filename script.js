@@ -12,7 +12,7 @@ function displayText() {
   paraGraph.style.fontWeight = "bold";
 }
 
-let name = prompt("What's your name?");
+/*let name = prompt("What's your name?");
 if (name !== "Tyrone" || name !== "tyrone") {
   alert("Oh, I thought you wer're someone else...");
 }
@@ -30,19 +30,30 @@ if (color === "green") {
   alert("You're on to something...");
 } else if (color != "") {
   alert("That's a nice color");
-}
+}*/
 
-const numberInp = document.querySelector("inputBx");
-const guessBtn = document.querySelector("guessBtn");
-const attemptCnt = document.querySelector("numTry");
+const numberInp = document.querySelector(".inputBx");
+const guessBtn = document.querySelector(".guessBtn");
+const attemptCnt = document.querySelector(".numTry");
+
 let randomNumber = Math.floor(Math.random() * 10);
+let attemptCount = 0;
 
-guessBtn.addEventListener("click", displayText);
+guessBtn.addEventListener("click", onGuess);
 
 function onGuess() {
-  attemptCnt++;
+  attemptCount++;
   const inpValue = Number(numberInp.value);
   if (inpValue === randomNumber) {
+    attemptCnt.textContent = `Congratulations! You guessed the number ${randomNumber} in ${attemptCount} attempts.`;
     numberInp.disabled = true;
+    guessBtn.disabled = true;
+  } else {
+    attemptCnt.textContent = `Attempts: ${attemptCount}`;
+    if (inpValue < randomNumber) {
+      alert("Too low! Try again.");
+    } else {
+      alert("Too high! Try again.");
+    }
   }
 }
