@@ -13,7 +13,6 @@ function addThing() {
     lineContainer.textContent = inputValue;
 
     newButton.textContent = "Finish Task";
-    newButton.className = "outBtn";
 
     newButton.addEventListener("click", finishTask);
 

@@ -1,0 +1,17 @@
+main {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+legend {
+  font-weight: bold;
+  font-size: 32px;
+}
+fieldset {
+  text-align: left;
+}
+.thing {
+  text-align: center;
+}
