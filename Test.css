@@ -1,3 +1,17 @@
+body {
+  background-color: #a0d2eb; /* Fallback color */
+
+  background-image: linear-gradient(
+    to bottom,
+    #a0d2eb,
+    #e5eaf5,
+    #d0bdf4,
+    #8458b3,
+    #494d4f
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 main {
   max-width: 1024px;
   margin-left: auto;
@@ -11,7 +25,37 @@ legend {
 }
 fieldset {
   text-align: left;
+  text-align: center;
+  border-radius: 25px;
+  border-color: black;
+  border-width: 2px;
 }
 .thing {
-  text-align: center;
+  margin-top: 15px;
+}
+.thing input {
+  padding: 10px 15px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  border-width: 1 px;
+  border-color: lightgray;
+  height: 10px;
+  box-shadow: 3px 3px 5px darkgrey;
+}
+.thing button {
+  background-color: #8458b3;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  box-shadow: 3px 3px 5px darkgrey;
+  cursor: pointer;
+}
+.needTo {
+  border: 1px solid black;
+  min-height: 50px;
+  border-radius: 25px;
+  border-width: 2px;
 }
